@@ -6,7 +6,6 @@ public class Main {
 	// write your code here
         System.out.println("Hello Akhil, Welcome!");
         int[] arr= {4,-2,66,-12,8};
-        //BubbleSort.sort(arr);
-        InsertionSort.sort(arr);
+        System.out.println(Factorial.rec_factorial(4));
     }
 }
