@@ -53,6 +53,32 @@ public class EmployeeLinkedList {
         size--;
         return en;
     }
+    public boolean addBefore(Employee eadd, Employee ebef){
+        EmployeeNode current=head;
+        if(head==null){
+            return false;
+        }
+        EmployeeNode eaddn= new EmployeeNode(eadd);
+        while(current!=null&&!(current.getEmp().equals(ebef))){
+            current=current.getNext();
+        }
+        if(current == null){
+            return false;
+        }
+        if(current.getPrevious()==null){
+            current.setPrevious(eaddn);
+            eaddn.setNext(current);
+            head=eaddn;
+            return true;
+        }
+        else{
+            current.getPrevious().setNext(eaddn);
+            eaddn.setNext(current);
+            eaddn.setPrevious(current.getPrevious());
+            current.setPrevious(eaddn);
+            return true;
+        }
+    }
     public int getSize(){
         return size;
     }

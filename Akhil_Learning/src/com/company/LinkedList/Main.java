@@ -7,13 +7,15 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
         EmployeeLinkedList list= new EmployeeLinkedList();
-        list.addToFront(new Employee("Sai","Akhil","UIUI"));
-        list.addToFront(new Employee("Sai","Alekhya","UI"));
+        Employee ak=new Employee("Sai","Akhil","UIUI");
+        Employee al= new Employee("Sai","Alekhya","UI");
+        Employee sun=new Employee("Suneetha","KOlla","IU");
+        list.addToFront(ak);
+        list.addToFront(al);
+       list.print();
+        list.addBefore(sun,ak);
         list.print();
-        list.removeFromFront();
-        list.addToEnd(new Employee("Ram","Bab","IUIU"));
-        list.print();
-        list.removeFromEnd();
-        list.print();
+//        EmployeeNode aln= new EmployeeNode(al);
+//        System.out.println(aln.getEmp());
     }
 }
