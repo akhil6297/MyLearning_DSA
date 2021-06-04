@@ -59,16 +59,19 @@ public class EmployeeLinkedList {
             return false;
         }
         EmployeeNode eaddn= new EmployeeNode(eadd);
+        // searching for node before which we have to add
         while(current!=null&&!(current.getEmp().equals(ebef))){
             current=current.getNext();
         }
-        if(current == null){
+        // if that node is not there --or given node is ALREADY in node
+        if(current == null ){//|| current.getEmp().equals(eadd)){
             return false;
         }
         if(current.getPrevious()==null){
             current.setPrevious(eaddn);
             eaddn.setNext(current);
             head=eaddn;
+            size++;
             return true;
         }
         else{
@@ -76,6 +79,7 @@ public class EmployeeLinkedList {
             eaddn.setNext(current);
             eaddn.setPrevious(current.getPrevious());
             current.setPrevious(eaddn);
+            size++;
             return true;
         }
     }

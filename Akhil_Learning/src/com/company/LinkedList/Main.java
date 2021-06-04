@@ -15,6 +15,8 @@ public class Main {
        list.print();
         list.addBefore(sun,ak);
         list.print();
+        list.addBefore(ak,ak);
+        list.print();
 //        EmployeeNode aln= new EmployeeNode(al);
 //        System.out.println(aln.getEmp());
     }
